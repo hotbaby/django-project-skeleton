@@ -45,6 +45,7 @@ DEFAULT_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'applications',
 ]
 
 # Middlewares
@@ -99,6 +100,7 @@ MANAGERS = ADMINS
 
 # the default WSGI application
 WSGI_APPLICATION = '%s.wsgi.application' % SITE_NAME
+DATABASE_ROUTERS = ['{{ project_name }}.db_router.DatabaseRouter']
 
 # the root URL configuration
 ROOT_URLCONF = '%s.urls' % SITE_NAME
