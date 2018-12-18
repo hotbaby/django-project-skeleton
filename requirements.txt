@@ -1,14 +1,14 @@
-pylint>=2.10.3
+pylint>=1.9.3
 flake8>=3.5.0
 
 pytest>=3.9.1
-pylest-django>=3.1.2
+pytest-django>=3.1.2
 pytest-pythonpath>=0.7.3
 
 Django==1.10.8
-django-redis>=4.8.0
-django-filter>=1.1.0
-djangorestframework>=3.6.2
+django-redis==4.8.0
+django-filter==1.1.0
+djangorestframework==3.6.2
 django-transaction-hooks>=0.2
 
 xlrd==1.1.0
