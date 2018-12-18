@@ -3,6 +3,6 @@ Django Project Skeleton
 
 ## Create django project
 
-```python
+```sh
 django-admin startproject --template file:///Users/hotbaby/code/github/django-project-skeleton --name pytest.ini project-name
 ```
