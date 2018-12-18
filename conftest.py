@@ -21,16 +21,6 @@ def api_client():
     return api_client
 
 
-@pytest.fixture(autouse=True)
-def monkeypatch_rest_framework_settings(monkeypatch):
-    from django.conf import settings
-
-    REST_FRAMEWORK = settings.REST_FRAMEWORK
-    REST_FRAMEWORK['DEFAULT_PERMISSION_CLASSES'] = ()
-    REST_FRAMEWORK['DEFAULT_AUTHENTICATION_CLASSES'] = ()
-    monkeypatch.setattr(settings, 'REST_FRAMEWORK', REST_FRAMEWORK)
-
-
 @pytest.fixture(scope='session')
 def django_db_setup():
     # override this fixture to use the existing db
