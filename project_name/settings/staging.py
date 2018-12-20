@@ -31,3 +31,13 @@ ALLOWED_HOSTS = []
 
 # how many days a password reset should work. I'd say even one day is too long
 # PASSWORD_RESET_TIMEOUT_DAYS = 1
+
+
+INSTALLED_APPS = DEFAULT_APPS
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': join(PROJECT_ROOT, 'staging.sqlite3'),
+    }
+}
