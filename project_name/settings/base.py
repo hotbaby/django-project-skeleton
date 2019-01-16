@@ -128,3 +128,52 @@ except IOError:
             f.write(SECRET_KEY)
     except IOError:
         raise Exception('Could not open %s for writing!' % SECRET_FILE)
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'app': {
+            'format': '%(asctime)s|%(levelname)s|%(process)d|%(module)s|%(funcName)s|%(lineno)d|%(message)s',
+        },
+        'access': {
+            'format': '%(asctime)s|%(levelname)s|%(message)s',
+        },
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+        'access': {
+            'class': 'logging.handlers.WatchedFileHandler',
+            'filename': os.path.join(PROJECT_ROOT, 'logs/access.log'),
+            'formatter': 'access',
+        },
+        'app': {
+            'class': 'logging.handlers.WatchedFileHandler',
+            'filename': os.path.join(PROJECT_ROOT, 'logs/app.log'),
+            'formatter': 'app'
+        },
+        'error': {
+            'class': 'logging.handlers.WatchedFileHandler',
+            'filename': os.path.join(PROJECT_ROOT, 'logs/error.log'),
+            'formatter': 'app',
+            'level': 'ERROR',
+        }
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
+        },
+        'access': {
+            'handlers': ['access'],
+            'level': os.getenv('HZF_ACCESS_LOG_LEVEL', 'INFO'),
+        },
+        'app': {
+            'handlers': ['app', 'console', 'error'],
+            'level': os.getenv('HZF_APP_LOG_LEVEL', 'INFO'),
+        },
+    },
+}
