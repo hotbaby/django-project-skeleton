@@ -1,10 +1,10 @@
-pylint>=1.9.3
-flake8>=3.5.0
-autopep8>=1.4.3
+pylint==1.9.3
+flake8==3.5.0
+autopep8==1.4.0
 
-pytest>=3.9.1
-pytest-django>=3.1.2
-pytest-pythonpath>=0.7.3
+pytest==3.9.1
+pytest-django==3.1.2
+pytest-pythonpath==0.7.3
 
 Django==1.10.8
 django-redis==4.8.0
@@ -12,14 +12,14 @@ django-filter==1.1.0
 djangorestframework==3.6.2
 
 xlrd==1.1.0
-pandas>=0.19.0
-rest-pandas>=1.0.0
-openpyxl>=2.4.9
-xlwt>=1.2.0
-pdfkit>=0.6.1
+pandas==0.19.0
+rest-pandas==1.0.0
+openpyxl==2.4.9
+xlwt==1.2.0
+pdfkit==0.6.1
 
-redlock>=1.2.0
-click>=7.0
-requests>=2.13.0
+redlock==1.2.0
+click==7.0
+requests==2.13.0
 
 MySQL-python==1.2.5
