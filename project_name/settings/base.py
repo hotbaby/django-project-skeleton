@@ -79,10 +79,6 @@ TEMPLATES = [
     },
 ]
 
-# Internationalization
-USE_I18N = False
-
-
 # ##### SECURITY CONFIGURATION ############################
 
 # We store the secret key here
@@ -177,3 +173,12 @@ LOGGING = {
         },
     },
 }
+
+
+LANGUAGE_CODE = 'en-us'
+
+USE_TZ = False
+TIME_ZONE = 'Asia/Shanghai'
+
+USE_I18N = True
+USE_L10N = True
