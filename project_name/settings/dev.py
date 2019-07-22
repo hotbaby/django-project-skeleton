@@ -1,33 +1,23 @@
-# Python imports
-from os.path import join
+# encoding: utf8
 
-# project imports
-from .base import *
+import os
 
-# uncomment the following line to include i18n
-# from .i18n import *
+from .base import *     # NOQA
+from .base import DEFAULT_APPS, PROJECT_ROOT
 
-
-# ##### DEBUG CONFIGURATION ###############################
 DEBUG = True
 
-# allow all hosts during development
 ALLOWED_HOSTS = ['*']
 
-# adjust the minimal login
 LOGIN_URL = 'core_login'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = 'core_login'
 
-
-# ##### DATABASE CONFIGURATION ############################
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': join(PROJECT_ROOT, dev.sqlite3'),
+        'NAME': os.path.join(PROJECT_ROOT, 'dev.sqlite3'),
     }
 }
-
-# ##### APPLICATION CONFIGURATION #########################
 
 INSTALLED_APPS = DEFAULT_APPS
