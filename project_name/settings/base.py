@@ -112,18 +112,24 @@ LOGGING = {
             'class': 'logging.StreamHandler',
         },
         'access': {
-            'class': 'logging.handlers.WatchedFileHandler',
+            'class': 'logging.handlers.RotatingFileHandler',
             'filename': os.path.join(PROJECT_ROOT, 'logs/access.log'),
+            'maxBytes': 512*1024*1024,
+            'backupCount': 4,
             'formatter': 'access',
         },
         'app': {
-            'class': 'logging.handlers.WatchedFileHandler',
+            'class': 'logging.handlers.RotatingFileHandler',
             'filename': os.path.join(PROJECT_ROOT, 'logs/app.log'),
+            'maxBytes': 512*1024*1024,
+            'backupCount': 4,
             'formatter': 'app'
         },
         'error': {
-            'class': 'logging.handlers.WatchedFileHandler',
+            'class': 'logging.handlers.RotatingFileHandler',
             'filename': os.path.join(PROJECT_ROOT, 'logs/error.log'),
+            'maxBytes': 512*1024*1024,
+            'backupCount': 4,
             'formatter': 'app',
             'level': 'ERROR',
         }
