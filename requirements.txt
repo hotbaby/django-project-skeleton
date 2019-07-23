@@ -2,11 +2,11 @@ pylint==1.9.3
 flake8==3.5.0
 autopep8==1.4.0
 
-pytest==3.9.1
+pytest==3.0.0
 pytest-django==3.1.2
 pytest-pythonpath==0.7.3
 
-Django==1.10.8
+Django==1.11.22
 django-redis==4.8.0
 django-filter==1.1.0
 djangorestframework==3.6.2
